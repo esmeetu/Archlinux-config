@@ -13,6 +13,7 @@ cp $HOME/.Xdefaults .
 cp $HOME/.zshrc .
 
 # vim config
+cp $HOME/.vimrc .
 cp -rf $HOME/.vim/ .
 
 # i3wm config

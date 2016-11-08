@@ -29,6 +29,25 @@ set autoindent
 set cindent
 
 inoremap { {<CR>}<up><end><CR>
+inoremap ( ()<Esc>i
 " inoremap ;<cr> <end>;
 
 autocmd bufnewfile *.py so ~/.vim/headers/py_header.txt 
+
+colorscheme koehler
+
+let g:NERDTreeWinSize=20
+
+nmap <silent> <C-\> :NERDTreeToggle<CR>
+
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
+set completeopt-=preview
+
+set autochdir
+:let mapleader = "\<Space>"
