@@ -2,6 +2,7 @@
 
 # GOPATH
   export GOPATH=/home/jason/mygo 
+  export PATH=$PATH:$GOPATH/bin
   export GRADLE_HOME=/usr/share/java/gradle/bin
 #############################
 
