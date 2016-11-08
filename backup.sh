@@ -13,10 +13,10 @@ cp $HOME/.Xdefaults .
 cp $HOME/.zshrc .
 
 # vim config
-cp -r $HOME/.vim/ .
+cp -rf $HOME/.vim/ .
 
 # i3wm config
-cp -r $HOME/.config/i3/ .
+cp -rf $HOME/.config/i3/ .
 
 
 ### git push ###
