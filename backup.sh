@@ -19,6 +19,9 @@ cp -rf $HOME/.vim/ .
 # i3wm config
 cp -rf $HOME/.config/i3/ .
 
+# feh wallpaper setting
+cp -rf $HOME/.fehbg .
+
 
 ### git push ###
 

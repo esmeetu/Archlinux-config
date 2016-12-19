@@ -1,4 +1,7 @@
 #############################
+#
+# Spark
+  export SPARK_HOME="$HOME/spark-2.0.2-bin-hadoop2.3"
 
 # GOPATH
   export GOPATH=/home/jason/mygo 
@@ -9,7 +12,7 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/jason/.oh-my-zsh
   
-  export PATH=$PATH:/opt/anaconda2/bin
+  export PATH=/opt/anaconda2/bin:$PATH
 
 # Android Sdk Path
   export ANDROID_HOME=$HOME/Android/Sdk
@@ -111,9 +114,10 @@ export XMODIFIERS="@im=fcitx"
 
 alias vi='vim'
 alias wx='nohup chromium --app="https://wx2.qq.com" > /dev/null 2>&1 &'
-alias jn='nohup jupyter notebook > /dev/null 2>&1 &'
+alias jn='nohup jupyter-notebook > /dev/null 2>&1 &'
+alias vimgo='vim -u ~/.vimrc.go'
 
-if [[ ! $TERM =~ screen ]]; then
-	exec tmux
-	exec xrdb ~/.Xdefaults
-fi	
+#if [[ ! $TERM =~ screen ]]; then
+#	exec tmux
+#	exec xrdb ~/.Xdefaults
+#fi	

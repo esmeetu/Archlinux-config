@@ -28,10 +28,6 @@ set fillchars=
 set autoindent
 set cindent
 
-inoremap { {<CR>}<up><end><CR>
-inoremap ( ()<Esc>i
-" inoremap ;<cr> <end>;
-
 autocmd bufnewfile *.py so ~/.vim/headers/py_header.txt 
 
 colorscheme koehler
@@ -50,4 +46,4 @@ autocmd FileType go nmap <leader>r  <Plug>(go-run)
 set completeopt-=preview
 
 set autochdir
-:let mapleader = "\<Space>"
+let mapleader = "\<Space>"

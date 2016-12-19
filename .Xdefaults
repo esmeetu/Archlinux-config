@@ -80,3 +80,5 @@ URxvt*scrollTtyKeypress: true
  URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 ! URxvt.urgentOnBell:         true
  urxvt*urlLauncher:      /usr/bin/chromium
+ URxvt.inputMethod: ibus
+ URxvt.preeditType: OnTheSpot,None
