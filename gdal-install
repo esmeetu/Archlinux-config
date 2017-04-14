@@ -1,12 +1,15 @@
 #!/bin/bash
 
-prefix=/home/inspur/fmc/packages
+# provision:
+# for i in cu{01..14}; do ssh $i 'sh /home/aa/gdal-install'; done;
+
+prefix=/home/aa/packages
 lib=/usr/lib64
 
-rpm -ivh $prefix/rpms/*.rpm &&
+rpm -ivh --force $prefix/rpms/*.rpm &&
 rpm -ivh $prefix/hdf5-1.8.5.patch1-10.el6.x86_64.rpm &&
 rpm -ivh $prefix/netcdf-4.1.1-3.el6.5.x86_64.rpm &&
-rpm -ivh $prefix/gdal-1.9.2-4.el6.x86_64.rpm $prefix/gdal-libs-1.9.2-4.el6.x86_64.rpm &&
+rpm -ivh $prefix/gdal-1.9.2-4.el6.x86_64.rpm $prefix/gdal-libs-1.9.2-4.el6.x86_64.rpm $prefix/gdal-devel-1.9.2-4.el6.x86_64.rpm $prefix/gdal-java-1.9.2-4.el6.x86_64.rpm &&
 rpm -ivh $prefix/hdf5-1.8.9-1.el6.x86_64.rpm --force &&
 ln -s $lib/libhdf5.so.7 $lib/libhdf5.so.8 
 ln -s $lib/libhdf5_hl.so.7 $lib/libhdf5_hl.so.8
