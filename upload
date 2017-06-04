@@ -1,0 +1,14 @@
+#!/bin/bash
+
+counter=0
+while true; do
+    rm -rf $1/*.slice
+    pcs s -cu $1 $1 > log.txt
+    ((counter++))
+    status=$(grep Fail log.txt | sed 's/.*: //')
+    if [ $status == "0" ]; then
+	echo $counter > counter.txt
+        break
+    fi
+    sleep 1
+done

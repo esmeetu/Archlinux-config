@@ -1,0 +1,74 @@
+separator=false
+separator_block_width=5
+border_top=0
+border_left=0
+border_right=0
+border_bottom=4
+
+[output]
+command=~/.config/i3blocks/scripts/monitor.sh
+interval=60
+signal=4
+
+[updates]
+command=~/.config/i3blocks/scripts/updates.sh
+interval=60
+signal=3
+urgent=true
+
+[memory]
+label=  
+command=~/.config/i3blocks/scripts/memory
+interval=30
+border=#d33682
+
+[disk]
+command=/usr/lib/i3blocks/disk /
+interval=30
+label=  
+border=#C9CCDB
+
+[volume]
+label=    
+command=/usr/lib/i3blocks/volume
+interval=1
+signal=1
+markup=pango
+border=#cc241d
+
+[brightness]
+label=    
+command=printf "%.0f " $(xbacklight -get)
+interval=10
+signal=2
+border=#d79921
+
+[temperature]
+label=   
+command=echo "$(~/.config/i3blocks/scripts/temperature.sh 'Core 0') $(~/.config/i3blocks/scripts/temperature.sh 'Core 1') "
+interval=5
+border=#b16286
+
+[wireless]
+label=    
+command=[[ -z "$(iwgetid -r)" ]] || echo "$(iwgetid -r) "
+interval=2
+border=#98971a
+
+[bandwidth]
+command=~/.config/i3blocks/scripts/bandwidth
+interval=5
+border=#cb4b16
+
+[battery]
+command=~/.config/i3blocks/scripts/battery.sh
+interval=persist
+border=#458588
+
+[time]
+label=    
+command=echo "`date +'%a %d %b'` <b>`date +'%T'`</b> "; [[ -z "${BLOCK_BUTTON}" ]] || gsimplecal &
+interval=1
+markup=pango
+border=#928374
+separator_block_width=0
