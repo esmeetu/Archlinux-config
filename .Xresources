@@ -1,118 +1,86 @@
-Xft.antialias:  1
-Xft.hinting:    1
-Xft.autohint:   0
-Xft.hintstyle:  hintfull
-Xft.lcdfilter:  lcddefault
-Xft.dpi:        100
-Xft.rgba:       rgb
 
-! rofi
-rofi.modi: drun,window,ssh
-rofi.font: mono 15
-rofi.width: 100
-rofi.lines: 5
-rofi.columns: 1
-!rofi.opacity: 80
-!                    bg       fg      altbg    hlbg     hlfg
-rofi.color-normal: #282828, #ebdbb2, #282828, #ebdbb2, #282828
-rofi.color-urgent: #282828, #ebdbb2, #282828, #ebdbb2, #282828
-rofi.color-active: #282828, #ebdbb2, #282828, #ebdbb2, #282828
-rofi.color-window: #282828, #282828
-rofi.bw: 0
-rofi.location: 2
-rofi.padding: 30
-rofi.matching: normal
+!! Font
 
-!urxvt*depth:    32
-URxvt.transparent:   true
-URxvt.tintColor:     white
-URxvt.shading:       15
-! behelit color theme
- URxvt.background:    #1d2021
- URxvt.foreground:    #ebdbb2 
-! URxvt.cursorColor:   #60ff60
-! ! black
-! URxvt.color0:        #1c1c1c
-! URxvt.color8:        #4d4d4d
-!!
-!! ! red
-! URxvt.color1:        #d81860
-! URxvt.color9:        #f00060
-!!
-!! ! green
-! URxvt.color2:        #60ff60
-! URxvt.color10:       #70ff70
-!!
-!! ! yellow
-! URxvt.color3:        #f9fd75
-! URxvt.color11:       #f9fd80
-!
-!! ! blue
-! URxvt.color4:        #5d97fa
-! URxvt.color12:       #679dfa
-!!
-!! ! magenta
-! URxvt.color5:        #a78edb
-! URxvt.color13:       #ad97db
-!!
-!! ! cyan
-! URxvt.color6:        #4695c8
-! URxvt.color14:       #5a9dc8
-!!
-!! ! white
-! URxvt.color7:        #f3ebe2
-! URxvt.color15:       #eeeeee
-!
-! Black + DarkGrey
-*color0:  #282828
-*color8:  #928374
-! DarkRed + Red
-*color1:  #cc241d
-*color9:  #fb4934
-! DarkGreen + Green
-*color2:  #98971a
-*color10: #b8bb26
-! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #fabd2f
-! DarkBlue + Blue
-*color4:  #458588
-*color12: #83a598
-! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #d3869b
-! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #8ec07c
-! LightGrey + White
-*color7:  #a89984
-*color15: #ebdbb2
-! ! urxvt
- URxvt.termName:             rxvt-unicode-256color
- URxvt.geometry:             90x25
- URxvt.reverseVideo:         false
-URxvt.font:                 xft:WenQuanYi Micro Hei Mono,xft:monospace,xft:Source Code Pro for Powerline,xft:SauceCodePro Nerd Font:pixelsize=18
-URxvt*letterSpace: -2
-!URxvt.font-size.step: 0.5
- URxvt.scrollBar_floating:   true
- URxvt.scrollBar_right:      false
- URxvt.scrollColor:          #0c0c0c
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyKeypress: true
- URxvt.saveLines:            8192
- URxvt.perl-ext-common:      default,matcher,-searchable-scrollback,clipboard,keyboard-select
- URxvt.url-launcher:         google-chrome-stable
- URxvt.matcher.button:       1
-! URxvt.colorUL:              #5f87d7
-! URxvt.colorIT:              #d81860
- URxvt.cursorBlink:          true
- URxvt.keysym.M-c:   perl:clipboard:copy
- URxvt.keysym.M-v:   perl:clipboard:paste
- URxvt.keysym.M-C-v:      perl:clipboard:paste_escaped
- URxvt.copyCommand:          xclip -i -selection clipboard
- URxvt.pasteCommand:         xclip -o -selection clipboard
- URxvt.keysym.M-Escape:      perl:keyboard-select:activate
- URxvt.urgentOnBell:         0
- URxvt.inputMethod: fcitx
- URxvt.preeditType: OnTheSpot,None
+urxvt.font: xft:Inconsolata-g:size=14,xft:WenQuanYi Micro Hei Mono:size=14,xft:SauceCodePro Nerd Font Mono:size=14
+!urxvt.font: xft:DejaVu Sans Mono:pixelsize=13
+!xft:PragmataPro:size=13, xft:PragmataPro\ for\ Powerline:size=13
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgba
+Xft.hintstyle:  hintslight
+
+
+!! URXVT settings
+
+urxvt.scrollBar: false
+;urxvt.boldFont: xft:Inconsolata-g:size=14:weight=bold,xft:Source Han Sans CN Bold:size=14
+!urxvt.letterSpace: -1
+urxvt.saveLines: 1000000
+urxvt.transparent: false
+!urxvt.shading: 15
+!urxvt.blurRadius: 5
+
+! Ctrl Up and Down control font size
+!URxvt.resize-font.smaller: C-Down
+!URxvt.resize-font.bigger: C-Up
+! copy paste
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+
+urxvt.internalBorder: 25
+
+! disable ctrl-shift
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!URxvt*font: Hack
+!URxvt*font xft:terminus:size=25
+
+! black
+*.color0:	#585654
+*.color8:	#585654
+! red
+*color1:	#b45c5c
+*color9:	#b45c5c
+! green
+*color2:	#5cb477
+*color10:	#5cb477
+! yellow
+*color3:	#b4a95c
+*color11:	#b4a95c
+! blue
+*color4:	#5c7db4
+*color12:	#5c7db4
+! magenta
+*color5:	#b45c77
+color13:	#b45c77
+! cyan
+color6:	#5d9eb4
+color14:	#5d9eb4
+! white
+color7:	#ced0cb
+color15:	#ced0cb
+
+*.foreground:	#ced0cb
+*.background:	#262626	
+*.cursorColor:	#ced0cb
+
+URxvt.depth: 32
+URxvt.background: [50]#000000
+
+!! compdc
+
+! ROFI Color theme
+! Copyright: Rasmus Steinke
+
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.color-enabled: true
+rofi.color-window: #273238, #273238, #1e2529
+rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+rofi.combi-modi: window,drun,ssh
+rofi.font: Inconsolata-g 10

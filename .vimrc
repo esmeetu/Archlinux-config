@@ -5,9 +5,11 @@ syntax on
 
 execute pathogen#infect()
 
+set completeopt+=menuone
+let g:mucomplete#enable_auto_at_startup = 1
 set encoding=utf8
 
-set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim
+"set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim
 let g:airline_powerline_fonts = 1
 "let g:Powerline_symbols = 'fancy'
 "let Powerline_symbols = 'compatible'
@@ -47,16 +49,16 @@ set number
 set tabstop=4
 set shiftwidth=4
 set mouse=a
-set encoding=utf8
 set fillchars=
 set autoindent
 set cindent
 
 autocmd bufnewfile *.py so ~/.vim/headers/py_header.txt 
+autocmd bufnewfile *.c so ~/.vim/headers/c_header.txt 
 
 colorscheme ron
 
-let g:NERDTreeWinSize=20
+let g:NERDTreeWinSize=30
 
 nmap <silent> <C-\> :NERDTreeToggle<CR>
 
@@ -67,10 +69,21 @@ nnoremap <leader>a :cclose<CR>
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 
+set noshowmode shortmess+=c
+set noinfercase
 set completeopt-=preview
+set completeopt+=noselect
+set completeopt+=noinsert
+
+inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
 
 set autochdir
-let mapleader = "\<Space>"
+let mapleader = "-"
 inoremap <leader>; <C-o>A;
 
 set autoread
+
+let g:clang_use_library=1
+let g:clang_library_path='/usr/lib64/libclang.so.5'

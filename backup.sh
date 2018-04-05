@@ -7,7 +7,7 @@ cp $HOME/.npmrc .
 cp $HOME/.tmux.conf .
 
 # urxvt config
-cp $HOME/.Xdefaults .
+cp $HOME/.Xresources .
 
 # oh-my-zsh config
 cp $HOME/.zshrc .

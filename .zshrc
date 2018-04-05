@@ -12,10 +12,13 @@ export GRADLE_HOME=/usr/share/java/gradle/bin
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jason/.oh-my-zsh
   
-export PYTHONPATH="/opt/anaconda2/bin/python"
-export PATH=/opt/anaconda2/bin:$PATH
+#export PYTHONPATH="/opt/anaconda2/bin/python"
+#export PATH=/opt/anaconda2/bin:$PATH
 
-export repository_root=/usr/lib/python3.6/site-packages
+export SPARK_HOME=/home/jason/spark-2.2.0-bin-hadoop2.7
+export PATH=$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH
+
+#export repository_root=/usr/lib/python3.6/site-packages
   
 # JAVA_HOME
 #  export JAVA_HOME=/usr/lib/jvm/java-7-jdk
@@ -82,7 +85,7 @@ ZSH_THEME="pure"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git pm)
 
 # User configuration
 
@@ -102,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-export EDITOR='termite'
+export EDITOR='vim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -128,8 +131,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
 alias vi='vim'
-alias wx='google-chrome-stable --app="https://wx2.qq.com" > /dev/null 2>&1 &'
-alias jn='jupyter-notebook > /dev/null 2>&1 &'
+alias jn='/opt/anaconda2/bin/jupyter-notebook > /dev/null 2>&1 &'
 alias vimgo='vim -u ~/.vimrc.go'
 alias t='trans :zh'
 alias gist='proxychains -q gist'
@@ -144,54 +146,16 @@ antigen bundle kennethreitz/autoenv
 
 #npm set global path
 NPM_PACKAGES="${HOME}/.npm-packages"
-
 PATH="$NPM_PACKAGES/bin:$PATH"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-# Get latest container ID
-alias dl="docker ps -l -q"
-
-# Get container process
-alias dps="docker ps"
-
-# Get process included stop container
-alias dpa="docker ps -a"
-
-# Get images
-alias di="docker images"
-
-# Get container IP
-alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
-
-# Run deamonized container, e.g., $dkd base /bin/echo hello
-alias dkd="docker run -d -P"
-
-# Run interactive container, e.g., $dki base /bin/bash
-alias dki="docker run -i -t -P"
-
-# Execute interactive container, e.g., $dex base /bin/bash
-alias dex="docker exec -i -t"
-
-# Stop all containers
-dstop() { docker stop $(docker ps -a -q); }
-
-# Remove all containers
-drm() { docker rm $(docker ps -a -q); }
-
-# Stop and Remove all containers
-alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
-
-# Remove all images
-dri() { docker rmi $(docker images -q); }
-
-# Dockerfile build, e.g., $dbu tcnksm/test 
-dbu() { docker build -t=$1 .; }
-
-# Show all alias related docker
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
-
-# Bash into running container
-dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+# PM functions
+source ~/.pm/pm.zsh
+alias pma="pm add"
+alias pmg="pm go"
+alias pmrm="pm remove"
+alias pml="pm list"
+# end PM
